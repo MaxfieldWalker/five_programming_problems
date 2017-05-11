@@ -1,7 +1,7 @@
 // 問題1
 // forループ、whileループ、および再帰を使用して、リスト内の数字の合計を計算する3つの関数を記述せよ。
 
-fn for_sum(numbers: &Vec<i32>) -> i32 {
+pub fn for_sum(numbers: &Vec<i32>) -> i32 {
     let mut sum: i32 = 0;
     for n in numbers {
         sum += *n;
@@ -9,7 +9,7 @@ fn for_sum(numbers: &Vec<i32>) -> i32 {
     sum
 }
 
-fn while_sum(numbers: &Vec<i32>) -> i32 {
+pub fn while_sum(numbers: &Vec<i32>) -> i32 {
     let mut sum: i32 = 0;
     let mut i = 0;
 
@@ -22,7 +22,7 @@ fn while_sum(numbers: &Vec<i32>) -> i32 {
     sum
 }
 
-fn recursive_sum(numbers: &[i32]) -> i32 {
+pub fn recursive_sum(numbers: &[i32]) -> i32 {
     match numbers.len() {
         0 => 0,
         _ => numbers[0] + recursive_sum(&numbers[1..]),
@@ -32,9 +32,7 @@ fn recursive_sum(numbers: &[i32]) -> i32 {
 // #[cfg(test)]を付けると，テストの時だけビルドされるようになる
 #[cfg(test)]
 mod tests {
-    use super::for_sum;
-    use super::while_sum;
-    use super::recursive_sum;
+    use super::*;
 
     #[test]
     fn for_sum_test() {

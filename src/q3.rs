@@ -3,7 +3,7 @@
 
 // ※ u128がunstableなのでu64で計算する
 
-fn fibo(until: u32) -> Vec<u64> {
+pub fn fibo(until: u32) -> Vec<u64> {
     match until {
         0 => vec![],
         1 => vec![1],
@@ -34,7 +34,7 @@ fn rest_fibo(a: u64, b: u64, count: u32) -> Vec<u64> {
 
 #[cfg(test)]
 mod tests {
-    use super::fibo;
+    use super::*;
 
     #[test]
     fn test() {

@@ -1,7 +1,7 @@
 // 問題2
 // 交互に要素を取ることで、2つのリストを結合する関数を記述せよ。例えば [a, b, c]と[1, 2, 3]という2つのリストを与えると、関数は [a, 1, b, 2, c, 3]を返す
 
-fn concat(a: &[String], b: &[String]) -> Vec<String> {
+pub fn concat(a: &[String], b: &[String]) -> Vec<String> {
     match a.len() {
         0 => vec![],
         _ => {
@@ -16,7 +16,7 @@ fn concat(a: &[String], b: &[String]) -> Vec<String> {
 // #[cfg(test)]を付けると，テストの時だけビルドされるようになる
 #[cfg(test)]
 mod tests {
-    use super::concat;
+    use super::*;
 
     #[test]
     fn test() {
