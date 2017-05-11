@@ -1,0 +1,6 @@
+[package]
+name = "five_programming_problems"
+version = "0.1.0"
+authors = ["Maxfield Walker <maxfield.walker@gmail.com>"]
+
+[dependencies]
