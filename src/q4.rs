@@ -53,7 +53,6 @@ fn comparer(a: &u32, b: &u32) -> Ordering {
                 (false, false) => {
                     let a_without_msd = a % 10u32.pow(number_of_digits(*a) - 1);
                     let b_without_msd = b % 10u32.pow(number_of_digits(*b) - 1);
-                    println!("{}, {}", a_without_msd, b_without_msd);
                     comparer(&a_without_msd, &b_without_msd)
                 }
             }
